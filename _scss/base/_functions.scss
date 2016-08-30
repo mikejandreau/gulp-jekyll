@@ -1,0 +1,27 @@
+// Grid calculation
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@function grid-column-width($n) {
+  @return $column-width * $n - ($column-margin*($total-columns - $n)/$total-columns);
+}
+
+@function grid-offset-length($n) {
+  @return grid-column-width($n) + $column-margin;
+}
+
+// Media queries - @include mobile { selector: style; }
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin mobile   { @media (min-width: #{$width_mobile})  { @content; } }
+@mixin phablet  { @media (min-width: #{$width_phablet}) { @content; } }
+@mixin tablet   { @media (min-width: #{$width_tablet})  { @content; } }
+@mixin laptop   { @media (min-width: #{$width_laptop})  { @content; } }
+@mixin desktop  { @media (min-width: #{$width_desktop}) { @content; } }
+@mixin hdtv     { @media (min-width: #{$width_hdtv})    { @content; } }
+@mixin nomobile { @media (max-width: #{$hidden_mobile}) { @content; } }
+
+// Aspect ratio mixin - @include aspectRatio(16, 9);
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin aspectRatio($ratio-or-width, $height: null) {
+	$padding: if($height, percentage($height/$ratio-or-width), percentage(1/$ratio-or-width));
+	&:before { content:''; float: left; padding-bottom: $padding; }
+	&:after  { content:''; display: table; clear: both; } 
+}
