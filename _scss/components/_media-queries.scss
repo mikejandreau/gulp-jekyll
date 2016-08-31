@@ -18,5 +18,8 @@
 // Larger than laptop
 @include laptop {}
 
-// Larger than Desktop HD
+// Larger than Desktop
 @include desktop {}
+
+// Larger than HD
+@include hdtv {}
