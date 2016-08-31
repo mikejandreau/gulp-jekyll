@@ -11,10 +11,10 @@
   height: $navbar-height;
   background: $navbar-color;
   z-index: 99;
-  border-top: 1px solid #eee;
+  border-top: 1px solid $navbar-border;
 
   @include laptop {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $navbar-border;
   }
 }
 
@@ -40,20 +40,20 @@
   box-sizing: border-box;
 
   @include mobile {
-    width: $container-width-larger-than-mobile;
+    width: $container-width-mobile;
     margin: 0 auto;
     padding: 0;
   }
 
   @include phablet {
-    width: $container-width-larger-than-phablet;
+    width: $container-width-phablet;
     max-width: 960px;
   }
 }
 
 .navbar-menu {
   background: $navbar-color;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid $navbar-border;
   box-sizing: border-box;
   margin-top: 0;
   position: absolute;
@@ -100,15 +100,15 @@
   margin: 0 auto;
   padding: 0;
   float: none;
-  border-top: 1px solid #eee;
+  border-top: 1px solid $navbar-border;
 
   @include mobile {
-    width: $container-width-larger-than-mobile;
+    width: $container-width-mobile;
     padding: 0;
   }
 
   @include phablet {
-    width: $container-width-larger-than-phablet;
+    width: $container-width-phablet;
   }
 
   @include laptop {
@@ -131,12 +131,12 @@
   margin: 0;
   text-decoration: none;
   line-height: $navbar-height;
-  color: $font-color; 
+  color: $navbar-font-color; 
 
   &:hover,
   &:focus,
   &.active {
-    color: lighten($font-color, 15%); 
+    color: lighten($navbar-font-color, 15%); 
   }
 }
 
@@ -148,12 +148,12 @@
   letter-spacing: .2rem;
   margin: 0;
   line-height: $navbar-height;
-  color: $font-color; 
+  color: $navbar-font-color; 
 
   a {
-  color: $secondary-color;
-  text-decoration: none;
-  text-decoration: none;
+    color: $navbar-font-color;
+    text-decoration: none;
+    text-decoration: none;
   }
 }
 
@@ -202,12 +202,12 @@
   }
 
   &.is-active span {
-    background-color: lighten($font-color, 15%);
+    background-color: lighten($navbar-font-color, 15%);
     transform: rotate(-225deg);
   }
 
   &.is-active span::before {
-    background-color: lighten($font-color, 15%);
+    background-color: lighten($navbar-font-color, 15%);
     top: 0;
     transform: rotate(90deg);
   }
@@ -231,7 +231,7 @@
     left: $navbar-toggle-pad;
     right: $navbar-toggle-pad;
     height: $navbar-toggle-bar;
-    background-color: $font-color;
+    background-color: $navbar-font-color;
     transition-duration: $transistion_duration;
     // transition-delay: $transistion_duration;
 
@@ -242,7 +242,7 @@
       left: 0;
       width: 100%;
       height: $navbar-toggle-bar;
-      background-color: $font-color;
+      background-color: $navbar-font-color;
       content: "";
       transition-duration: $transistion_duration;
       // transition-delay: $transistion_duration;
