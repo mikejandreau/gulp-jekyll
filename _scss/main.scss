@@ -16,6 +16,7 @@
 @import "components/lists";
 @import "components/tables";
 @import "components/spacing";
+@import "components/syntax";
 @import "components/media-queries";
 
 .PageNavigation {
@@ -35,3 +36,5 @@
 .PageNavigation .next {
   text-align: right;
 }
+
+
